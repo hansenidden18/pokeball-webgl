@@ -1,0 +1,17 @@
+attribute vec3 position;
+attribute vec3 normal;
+attribute vec3 color;
+attribute vec2 uv;
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+varying vec3 vColor;
+varying vec3 vNormal;
+varying vec2 vUv;
+
+void main() {
+    vUv = uv;
+    vColor = color;
+    vNormal = (model * vec4(normal, 0.)).xyz;
+    gl_Position = projection * view * model * vec4(position, 1.);
+}

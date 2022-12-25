@@ -4,12 +4,12 @@ var gl = renderer.getContext()
 
 var objects = []
 
-Mesh.load(gl, '/assets/pokeball.txt')
+Mesh.load(gl, 'assets/pokeball.txt')
     .then(function (mesh) {
       objects.push(mesh)
     })
 
-ShaderProgram.load(gl, '/shaders/basic.vert', '/shaders/basic.frag')
+ShaderProgram.load(gl, 'shaders/basic.vert', 'shaders/basic.frag')
             .then(function (shader) {
               renderer.setShader(shader)
             })
